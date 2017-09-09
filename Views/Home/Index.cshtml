@@ -1,0 +1,42 @@
+@model BurtsonFileUploader.ViewModels.CredentialsViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="col-xs-12 col-md-6 col-md-offset-3">
+    
+    <div class="row">
+        <h1>Burtson.com private services.</h1>
+        <hr />
+        <div class="well">
+            <form method="post" asp-controller="Authorize" asp-action="Authenticate" class="form-horizontal" >
+                <fieldset>
+                    <legend>Family Login</legend>
+                    <div class="form-group">
+                        <label for="Username" class="col-lg-2 control-label">Username</label>
+                        <div class="col-lg-10">
+                            <input asp-for="Username" type="text" class="form-control" name="Username" placeholder="Who goes there?">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Password" class="col-lg-2 control-label">Password</label>
+                        <div class="col-lg-10">
+                            <input asp-for="Password" type="Password" class="form-control" name="Password" placeholder="Prove It!">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+@*<app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>*@
+
+<script src="~/dist/vendor.js" asp-append-version="true"></script>
+@section scripts {
+    <script src="~/dist/main-client.js" asp-append-version="true"></script>
+}
